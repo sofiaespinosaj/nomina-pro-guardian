@@ -1,0 +1,6 @@
+.agent/*
+.env
+.gemini/*
+.github/*
+.opencode/*
+openspec/*  
