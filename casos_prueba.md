@@ -212,3 +212,55 @@ Este documento contiene la matriz oficial de escenarios de prueba adaptada rigur
       "neto_pagar": 1400358.36
     }
     ```
+
+### CP11: Escenario de Estrés Mixto Máximo con Salario Alto y Centavos (Caso Propio de la Célula)
+* **Regla de Negocio:** R1, R2, R3 y R4 - Integración de Horas Mixtas Simultáneas con Exclusión de Auxilio de Transporte.
+* **Descripción:** Diseñado por la célula para estresar el algoritmo con un salario base alto ($2.800.000) que supera el umbral de auxilio de transporte, combinando una cantidad alta de horas extras diurnas (12) y nocturnas (8) con un valor de hora con decimales complejos ($11.666,67).
+* **Entrada (Input):**
+    ```json
+    {
+      "salario_base": 2800000.0,
+      "horas_extras_diurnas": 12,
+      "horas_extras_nocturnas": 8,
+      "vlr_hora": 11666.67
+    }
+    ```
+* **Salida Esperada (Expected Output):**
+    ```json
+    {
+      "salario_base": 2800000.0,
+      "total_extras_diurnas": 175000.05,
+      "total_extras_nocturnas": 163333.38,
+      "total_devengado": 3138333.43,
+      "descuento_salud": 125533.34,
+      "descuento_pension": 125533.34,
+      "auxilio_transporte": 0.0,
+      "neto_pagar": 2887266.76
+    }
+    ```
+
+### CP12: Escenario Límite de Frontera Mínima con Horas Extras (Caso Propio de la Célula)
+* **Regla de Negocio:** R1, R3, R4 y R5 - Frontera del Salario Mínimo Legal con Trabajo Suplementario.
+* **Descripción:** Validar que un empleado en el límite inferior estricto de salario ($1.300.000) pueda acumular horas extras diurnas sin alterar su derecho al auxilio de transporte ni violar la capa defensiva R5.
+* **Entrada (Input):**
+    ```json
+    {
+      "salario_base": 1300000.0,
+      "horas_extras_diurnas": 5,
+      "horas_extras_nocturnas": 0,
+      "vlr_hora": 5416.67
+    }
+    ```
+* **Salida Esperada (Expected Output):**
+    ```json
+    {
+      "salario_base": 1300000.0,
+      "total_extras_diurnas": 33854.19,
+      "total_extras_nocturnas": 0.0,
+      "total_devengado": 1333854.19,
+      "descuento_salud": 53354.17,
+      "descuento_pension": 53354.17,
+      "auxilio_transporte": 162000.0,
+      "neto_pagar": 1389145.85
+    }
+    ```
