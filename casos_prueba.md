@@ -127,7 +127,7 @@ Este documento contiene la matriz oficial de escenarios de prueba adaptada rigur
     {
       "total_devengado": 1300000.0,
       "auxilio_transporte": 162000.0,
-      "neto_pagar": 1366000.0
+      "neto_pagar": 1358000.0
     }
     ```
 

@@ -3,4 +3,5 @@
 .gemini/*
 .github/*
 .opencode/*
-openspec/*  
+openspec/*
+__pycache__/  
