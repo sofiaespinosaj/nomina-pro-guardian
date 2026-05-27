@@ -16,6 +16,8 @@ def main() -> None:
 		"/app",
 		"-v",
 		f"{base_dir}:/app",
+		"-e",
+		"PYTHONPATH=/app",
 		"guardian-sandbox",
 		"pytest",
 		"tests/",
@@ -52,8 +54,11 @@ def main() -> None:
 	payload = {
 		"veredicto": verdict,
 		"total": total,
+		"passed": passed,
+		"failed": failed,
 		"pasaron": passed,
 		"fallaron": failed,
+		"bugs_detectados": failed,
 		"logs": {
 			"stdout": stdout,
 			"stderr": stderr,

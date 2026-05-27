@@ -5,3 +5,4 @@
 .opencode/*
 openspec/*
 __pycache__/  
+.venv/
