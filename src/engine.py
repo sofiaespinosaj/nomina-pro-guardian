@@ -14,7 +14,7 @@ def liquidar_nomina(
     - R3 (Seguridad Social): Calcula 'descuento_salud' (4%) y 'descuento_pension' (4%) estrictamente sobre 
       el 'total_devengado' (salario_base + total_extras_diurnas + total_extras_nocturnas).
     - R4 (Auxilio de Transporte): Asigna $162.000 a 'auxilio_transporte' solo si salario_base <= 2600000.0.
-        - R5 (Validación Defensiva): Se debe lanzar una excepción ValueError con un mensaje 
+    - R5 (Validación Defensiva): Se debe lanzar una excepción ValueError con un mensaje 
             claro si salario_base < $1.300.000 o si alguna cantidad de horas extras es negativa.
 
     Parámetros:
