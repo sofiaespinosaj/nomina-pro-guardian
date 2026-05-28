@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-05-27T16:18:17.334255",
+  "timestamp": "2026-05-27T20:45:28.748890",
   "modelo_ia": "qwen2.5-coder:7b",
   "tests_generados": "C:\\coil\\nomina-pro-guardian\\tests\\test_generated.py",
-  "resumen_agente": "Veredicto APROBADO; pasaron=12, fallaron=0, bugs_detectados=0."
+  "resumen_agente": "total=12, aprobadas=11, reprobadas=1, bugs=1, veredicto=RECHAZADO"
 }
