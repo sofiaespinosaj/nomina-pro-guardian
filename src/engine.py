@@ -9,16 +9,14 @@ def liquidar_nomina(
     y las reglas de negocio estipuladas para el proyecto Nómina Pro (R1 - R5).
 
     Reglas de Negocio a evaluar por el Quality Guardian:
-    - R1 (Recargo Diurno): 25% sobre el valor de la hora ordinaria (vlr_hora * 1.25).
-    - R2 (Recargo Nocturno): 75% sobre el valor de la hora ordinaria (vlr_hora * 1.75).
-    - R3 (Seguridad Social): Deducción de 4% para Salud y 4% para Pensión calculados 
-      exclusivamente sobre el Total Devengado (Salario Base + Extras). El Auxilio de 
-      Transporte no hace parte de esta base de cotización.
-    - R4 (Auxilio de Transporte): Se adiciona un valor fijo de $162.000 únicamente si el 
-      salario_base es menor o igual a $2.600.000.
+    - R1 (Recargo Diurno): Calcula 'total_extras_diurnas' como el 25% extra (vlr_hora * 1.25 * horas_extras_diurnas).
+    - R2 (Recargo Nocturno): Calcula 'total_extras_nocturnas' como el 75% extra (vlr_hora * 1.75 * horas_extras_nocturnas).
+    - R3 (Seguridad Social): Calcula 'descuento_salud' (4%) y 'descuento_pension' (4%) estrictamente sobre 
+      el 'total_devengado' (salario_base + total_extras_diurnas + total_extras_nocturnas).
+    - R4 (Auxilio de Transporte): Asigna $162.000 a 'auxilio_transporte' solo si salario_base <= 2600000.0.
     - R5 (Validación Defensiva): Se debe lanzar una excepción ValueError con un mensaje 
-      claro si salario_base < $1.300.000 o si alguna cantidad de horas extras es negativa, 
-      o si vlr_hora <= 0.
+            claro si salario_base < $1.300.000 o si alguna cantidad de horas extras es negativa
+            o si vlr_hora <= 0.
 
     Parámetros:
     -----------
@@ -64,8 +62,8 @@ def liquidar_nomina(
         raise ValueError(f"Error de validación (R5): La cantidad de horas extras nocturnas ({horas_extras_nocturnas}) no puede ser negativa.")
         
     if vlr_hora <= 0:
-        raise ValueError(f"Error de validación (R5): El valor de la hora ordinaria ({vlr_hora}) debe ser estrictamente mayor a cero.")
-
+        raise ValueError(f"Error de validación (R5): El valor de la hora ({vlr_hora}) debe ser estrictamente mayor a cero.")
+       
     # --- NÚCLEO MATEMÁTICO DE LIQUIDACIÓN (Reglas R1 - R4) ---
     total_extras_diurnas = horas_extras_diurnas * vlr_hora * 1.25
     total_extras_nocturnas = horas_extras_nocturnas * vlr_hora * 1.75
