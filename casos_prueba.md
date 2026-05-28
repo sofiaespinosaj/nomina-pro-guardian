@@ -65,9 +65,14 @@ Este documento contiene la matriz oficial de escenarios de prueba adaptada rigur
 * **Salida Esperada (Expected Output):**
     ```json
     {
+      "salario_base": 2000000.0,
+      "total_extras_diurnas": 0.0,
+      "total_extras_nocturnas": 0.0,
       "total_devengado": 2000000.0,
       "descuento_salud": 80000.0,
-      "descuento_pension": 80000.0
+      "descuento_pension": 80000.0,
+      "auxilio_transporte": 162000.0,
+      "neto_pagar": 2002000.0
     }
     ```
 
@@ -86,9 +91,14 @@ Este documento contiene la matriz oficial de escenarios de prueba adaptada rigur
 * **Salida Esperada (Expected Output):**
     ```json
     {
+      "salario_base": 1300000.0,
       "total_extras_diurnas": 27083.35,
       "total_extras_nocturnas": 18958.35,
-      "total_devengado": 1346041.70
+      "total_devengado": 1346041.70,
+      "descuento_salud": 53841.67,
+      "descuento_pension": 53841.67,
+      "auxilio_transporte": 162000.0,
+      "neto_pagar": 1400358.36
     }
     ```
 
@@ -106,6 +116,12 @@ Este documento contiene la matriz oficial de escenarios de prueba adaptada rigur
 * **Salida Esperada (Expected Output):**
     ```json
     {
+      "salario_base": 3000000.0,
+      "total_extras_diurnas": 0.0,
+      "total_extras_nocturnas": 0.0,
+      "total_devengado": 3000000.0,
+      "descuento_salud": 120000.0,
+      "descuento_pension": 120000.0,
       "auxilio_transporte": 0.0,
       "neto_pagar": 2760000.0
     }
@@ -125,7 +141,12 @@ Este documento contiene la matriz oficial de escenarios de prueba adaptada rigur
 * **Salida Esperada (Expected Output):**
     ```json
     {
+      "salario_base": 1300000.0,
+      "total_extras_diurnas": 0.0,
+      "total_extras_nocturnas": 0.0,
       "total_devengado": 1300000.0,
+      "descuento_salud": 52000.0,
+      "descuento_pension": 52000.0,
       "auxilio_transporte": 162000.0,
       "neto_pagar": 1358000.0
     }
@@ -183,8 +204,14 @@ Este documento contiene la matriz oficial de escenarios de prueba adaptada rigur
 * **Salida Esperada (Expected Output):**
     ```json
     {
+      "salario_base": 2500000.0,
+      "total_extras_diurnas": 0.0,
+      "total_extras_nocturnas": 0.0,
       "total_devengado": 2500000.0,
-      "descuento_pension": 100000.0
+      "descuento_salud": 100000.0,
+      "descuento_pension": 100000.0,
+      "auxilio_transporte": 162000.0,
+      "neto_pagar": 2462000.0
     }
     ```
 
